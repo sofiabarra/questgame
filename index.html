@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Quest 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <audio id="bgMusic" src="bg.mp3" loop></audio>
+<audio id="correctSound" src="correct.mp3"></audio>
+<audio id="wrongSound" src="wrong.mp3"></audio>
+<audio id="winSound" src="win.mp3"></audio>
+
+<div class="game-wrapper">
+
+    <!-- START -->
+    <section id="startScreen" class="screen active">
+        <div class="card">  
+            <h1 class="title">LOVE QUEST 💕</h1>
+            <p class="subtitle">
+                Supera todos los niveles<br>
+                y desbloquea el premio final 🎮
+            </p>
+            <button class="btn" onclick="startGame()">START</button>
+        </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="gameScreen" class="screen">
+        <div class="hud">
+            <span id="levelText">LEVEL 1</span>
+        </div>
+
+        <div class="question-box">
+            <p id="questionText"></p>
+            <div class="options" id="options"></div>
+        </div>
+    </section>
+
+    <!-- POPUP -->
+    <section id="popupScreen" class="screen">
+        <div class="card">
+            <h2 id="popupTitle"></h2>
+            <p id="popupMessage"></p>
+            <button class="btn" onclick="nextLevel()">CONTINUAR</button>
+        </div>
+    </section>
+
+    <!-- WIN -->
+    <section id="winScreen" class="screen">
+        <div class="card">
+            <h2 class="win">YOU WIN 💖</h2>
+
+            <p class="win-text">
+                🎮 Has completado todos los niveles<br><br>
+
+                🍽️ Cita romántica<br>
+                📅 14 de Febrero 2026<br>
+                ⏰ 7:00 PM<br><br>
+
+                ¿Quieres ser mi San Valentín? ❤️
+            </p>
+
+            <label>¿Aceptas?</label>
+            <select id="accept">
+                <option>SÍ 💖</option>
+                <option>SÍ OBVIO 😍</option>
+            </select>
+            <br><br>
+            <label>Elige el lugar:</label>
+            <select id="restaurant">
+                <option>Sushi</option>
+                <option>La Casca</option>
+                <option>Fuego Lento</option>
+                <option>Clementinas</option>
+                <option>Otro</option>
+
+            </select>
+
+            <textarea id="comment" placeholder="Algo más que decir..."></textarea>
+
+            <button class="btn" onclick="sendWhatsApp()">CONFIRMAR</button>
+        </div>
+    </section>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

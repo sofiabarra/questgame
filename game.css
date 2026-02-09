@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(circle at top, #2b1055, #000);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', monospace;
+    color: #fff;
+}
+
+/* Forzar tipografía */
+button, select, textarea, option {
+    font-family: 'Press Start 2P', monospace;
+}
+
+.game-wrapper {
+    width: 100%;
+    max-width: 420px;
+    padding: 16px;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+.card, .question-box {
+    background: linear-gradient(#12002e, #000);
+    border: 4px solid #ff4da6;
+    padding: 20px;
+    text-align: center;
+    animation: pop .25s ease-out;
+}
+
+.title {
+    font-size: 26px;
+    color: #ff4da6;
+    margin-bottom: 18px;
+    text-shadow: 3px 3px #000;
+    animation: pulse 1.6s infinite;
+}
+
+.subtitle {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.hud {
+    font-size: 10px;
+    margin-bottom: 14px;
+}
+
+#questionText {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.options button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    background: #1a1a1a;
+    color: #fff;
+    border: 3px solid #ff4da6;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px #b30059;
+}
+
+.options button:hover {
+    background: #ff4da6;
+    color: #000;
+}
+
+.options button.selected {
+    background: #00ffcc;
+    color: #000;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 14px;
+    padding: 14px;
+    background: #ff4da6;
+    color: #000;
+    border: 3px solid #000;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px #b30059;
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.win {
+    font-size: 20px;
+    color: #00ffcc;
+}
+
+.win-text {
+    font-size: 11px;
+    line-height: 1.8;
+    margin: 18px 0;
+}
+
+select, textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 9px;
+    border: 3px solid #ff4da6;
+    background: #000;
+    color: #fff;
+}
+
+textarea {
+    resize: none;
+    height: 70px;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+}
+
+@keyframes pop {
+    from { transform: scale(.93); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 360px) {
+    .title { font-size: 22px; }
+}
