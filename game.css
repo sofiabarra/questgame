@@ -144,3 +144,24 @@ textarea {
 @media (max-width: 360px) {
     .title { font-size: 22px; }
 }
+
+/* Apply hover styles only on devices that actually support hover (no touch devices) */
+@media (hover: hover) {
+    .options button:hover {
+        background: #ff4da6;
+        color: #000;
+    }
+}
+
+/* Mobile-specific: increase form font-size to avoid automatic zoom on focus */
+@media (max-width: 480px) {
+    select, textarea, input, .options button, .btn {
+        font-size: 16px;
+    }
+
+    /* Ensure the comment textarea uses a readable size on phones */
+    #comment {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+}
